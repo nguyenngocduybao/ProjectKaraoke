@@ -25,6 +25,7 @@ public class MainYoutube extends YouTubeBaseActivity {
         setContentView(R.layout.activity_main_youtube);
         addControls();
         addEvents();
+        mYoutubePlayerView.initialize(YoutubeConfig.getApiKey(),mOnInitializedListener);
     }
 
     private void addEvents() {
@@ -46,12 +47,12 @@ public class MainYoutube extends YouTubeBaseActivity {
         };
 
 
-        btnPlay.setOnClickListener(new View.OnClickListener() {
+        /*btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mYoutubePlayerView.initialize(YoutubeConfig.getApiKey(),mOnInitializedListener);
             }
-        });
+        });*/
 
 
     }
