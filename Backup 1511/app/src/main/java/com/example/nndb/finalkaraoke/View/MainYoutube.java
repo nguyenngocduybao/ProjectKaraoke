@@ -25,7 +25,11 @@ public class MainYoutube extends YouTubeBaseActivity {
         setContentView(R.layout.activity_main_youtube);
         addControls();
         addEvents();
-        mYoutubePlayerView.initialize(YoutubeConfig.getApiKey(),mOnInitializedListener);
+    }
+
+    private void addControls() {
+        mYoutubePlayerView=findViewById(R.id.mYoutubePlay);
+        btnPlay=findViewById(R.id.btnPlay);
     }
 
     private void addEvents() {
@@ -37,7 +41,9 @@ public class MainYoutube extends YouTubeBaseActivity {
                 Music music= (Music) intent.getSerializableExtra("KEY_MUSIC");
                 String KeyYoutubeURL=music.getKeyYoutube();
                 //youTubePlayer.setFullscreen(true);
-                youTubePlayer.loadVideo(KeyYoutubeURL);
+                if (!b) {
+                    youTubePlayer.cueVideo(KeyYoutubeURL);
+                }
             }
 
             @Override
@@ -46,25 +52,13 @@ public class MainYoutube extends YouTubeBaseActivity {
             }
         };
 
-
-        /*btnPlay.setOnClickListener(new View.OnClickListener() {
+        /**btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mYoutubePlayerView.initialize(YoutubeConfig.getApiKey(),mOnInitializedListener);
             }
-        });*/
+        });**/
 
-
-    }
-
-
-
-    private void addControls() {
-
-        mYoutubePlayerView=findViewById(R.id.mYoutubePlay);
-        btnPlay=findViewById(R.id.btnPlay);
-
-
-
+        mYoutubePlayerView.initialize(YoutubeConfig.getApiKey(),mOnInitializedListener);
     }
 }
