@@ -2,6 +2,7 @@ package com.example.nndb.finalkaraoke.View;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -107,6 +108,13 @@ public class MainActivity extends AppCompatActivity  {
         xuLySaoChepCSDL();
         addControls();
         addEvents();
+        SharedPreferences pref = getSharedPreferences("pref",MODE_PRIVATE);
+
+        Boolean firstStart = pref.getBoolean("firstStart",true);
+        if (firstStart) {
+            //show start activity
+            showIntro();
+        }
 
     }
 
@@ -325,5 +333,15 @@ public class MainActivity extends AppCompatActivity  {
 
         xuLyHienThiBaiHat();
 
+    }
+    // show Intro
+    private void showIntro(){
+        startActivity(new Intent(MainActivity.this, IntroActivity.class));
+        Toast.makeText(MainActivity.this, "First Run", Toast.LENGTH_LONG)
+                .show();
+        SharedPreferences pref = getSharedPreferences("pref",MODE_PRIVATE);
+        SharedPreferences.Editor editor= pref.edit();
+        editor.putBoolean("firstStart",false);
+        editor.apply();
     }
 }
