@@ -297,6 +297,11 @@ public class MainActivity extends AppCompatActivity  {
         tabYeuThich.setIndicator("Yêu thích");
         tabHost.addTab(tabYeuThich);
 
+        TabHost.TabSpec tabSearch=tabHost.newTabSpec("t3");
+        tabSearch.setContent(R.id.tabSearch);
+        tabSearch.setIndicator("Tìm kiếm online");
+        tabHost.addTab(tabSearch);
+
         //endregion;
 
         //region Controls
