@@ -5,8 +5,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,7 +22,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.nndb.finalkaraoke.Model.Adapter.AdapterMusic;
+import com.example.nndb.finalkaraoke.Model.Adapter.YoutubeAdapter;
+import com.example.nndb.finalkaraoke.Model.Adapter.YoutubeConnector;
 import com.example.nndb.finalkaraoke.Model.DTO.Music;
+import com.example.nndb.finalkaraoke.Model.DTO.VideoItem;
 import com.example.nndb.finalkaraoke.R;
 
 import java.io.File;
@@ -27,6 +33,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity  {
 
@@ -98,6 +105,14 @@ public class MainActivity extends AppCompatActivity  {
     TextView tvTenBH;
     EditText txtTimBH,txtTimYT;
     Button btnTimBH,btnTimYT;
+
+    EditText txtSearch;
+    Button btnTimBHOnline;
+    RecyclerView recycleViewYoutubeSearch;
+
+    YoutubeAdapter youtubeAdapter;
+    List<VideoItem> searchResults;
+    Handler handler;
     //endregion
 
     @Override
@@ -170,7 +185,12 @@ public class MainActivity extends AppCompatActivity  {
                 searchYT();
             }
         });
-
+        btnTimBHOnline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchOnYoutube(txtSearch.getText().toString()+" karaoke");
+            }
+        });
     }
 
 
@@ -314,6 +334,10 @@ public class MainActivity extends AppCompatActivity  {
         txtTimYT=findViewById(R.id.txtTimYeuThich);
         btnTimBH=findViewById(R.id.btnTimBH);
         btnTimYT=findViewById(R.id.btnTimYT);
+
+        txtSearch=findViewById(R.id.txtSearch);
+        btnTimBHOnline=findViewById(R.id.btnTimBHOnline);
+        recycleViewYoutubeSearch=findViewById(R.id.recycleViewYoutubeSearch);
         //endregion;
 
         //region Set Data to Adapter
@@ -338,6 +362,16 @@ public class MainActivity extends AppCompatActivity  {
 
         xuLyHienThiBaiHat();
 
+        //Fixing the size of recycler view which means that the size of the view
+        //should not change if adapter or children size changes
+        recycleViewYoutubeSearch.setHasFixedSize(true);
+        //give RecyclerView a layout manager to set its orientation to vertical
+        //by default it is vertical
+        recycleViewYoutubeSearch.setLayoutManager(new LinearLayoutManager(this));
+
+        handler = new Handler();
+
+        searchOnYoutube("Top karaoke Viet Nam");
     }
     // show Intro
     private void showIntro(){
@@ -349,4 +383,54 @@ public class MainActivity extends AppCompatActivity  {
         editor.putBoolean("firstStart",false);
         editor.apply();
     }
+
+    //custom search method which takes argument as the keyword for which videos is to be searched
+    private void searchOnYoutube(final String keywords){
+
+        //A thread that will execute the searching and inflating the RecyclerView as and when
+        //results are found
+        new Thread(){
+
+            //implementing run method
+            public void run(){
+
+                //create our YoutubeConnector class's object with Activity context as argument
+                YoutubeConnector yc = new YoutubeConnector(MainActivity.this);
+
+                //calling the YoutubeConnector's search method by entered keyword
+                //and saving the results in list of type VideoItem class
+                searchResults = yc.search(keywords);
+
+                //handler's method used for doing changes in the UI
+                handler.post(new Runnable(){
+
+                    //implementing run method of Runnable
+                    public void run(){
+
+                        //call method to create Adapter for RecyclerView and filling the list
+                        //with thumbnail, title, id and description
+                        fillYoutubeVideos();
+
+                        //after the above has been done hiding the ProgressDialog
+                        //mProgressDialog.dismiss();
+                    }
+                });
+            }
+            //starting the thread
+        }.start();
+    }
+
+    //method for creating adapter and setting it to recycler view
+    private void fillYoutubeVideos(){
+
+        //object of YoutubeAdapter which will fill the RecyclerView
+        youtubeAdapter = new YoutubeAdapter(getApplicationContext(),searchResults);
+
+        //setAdapter to RecyclerView
+        recycleViewYoutubeSearch.setAdapter(youtubeAdapter);
+
+        //notify the Adapter that the data has been downloaded so that list can be updapted
+        youtubeAdapter.notifyDataSetChanged();
+    }
+
 }
