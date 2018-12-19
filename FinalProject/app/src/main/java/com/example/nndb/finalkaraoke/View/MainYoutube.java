@@ -19,7 +19,7 @@ public class MainYoutube extends YouTubeBaseActivity {
 
     YouTubePlayerView mYoutubePlayerView;
     YouTubePlayer.OnInitializedListener mOnInitializedListener;
-    TextView txtTenBaiHat, txtCaSi;
+    TextView txtTenBaiHat, txtCaSi, txtMaBH;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +32,12 @@ public class MainYoutube extends YouTubeBaseActivity {
         mYoutubePlayerView=findViewById(R.id.mYoutubePlay);
         txtTenBaiHat= findViewById(R.id.txtTenBaiHat);
         txtCaSi=findViewById(R.id.txtCaSi);
+        txtMaBH=findViewById(R.id.txtMaBH);
+        Intent intent=getIntent();
+        Music music= (Music) intent.getSerializableExtra("KEY_MUSIC");
+        txtTenBaiHat.setText(music.getTenBH());
+        txtCaSi.setText(music.getCaSi());
+        txtMaBH.setText(music.getMaBH());
     }
 
     private void addEvents() {
@@ -42,10 +48,10 @@ public class MainYoutube extends YouTubeBaseActivity {
                 Intent intent=getIntent();
                 Music music= (Music) intent.getSerializableExtra("KEY_MUSIC");
                 String KeyYoutubeURL=music.getKeyYoutube();
-                String TenBH= music.getTenBH();
-                String CaSi= music.getCaSi();
-                txtTenBaiHat.setText(TenBH);
-                txtCaSi.setText(CaSi);
+                //String TenBH= music.getTenBH();
+                //String CaSi= music.getCaSi();
+                //txtTenBaiHat.setText(TenBH);
+                //txtCaSi.setText(CaSi);
                 //youTubePlayer.setFullscreen(true);
                 if (!b) {
                     youTubePlayer.cueVideo(KeyYoutubeURL);

@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="TextView"
+        android:textColor="#0066FF"
         android:textSize="24sp" />
 
     <TextView
@@ -30,6 +31,16 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="TextView"
+        android:textColor="#00E1FF"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/txtMaBH"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#FF0000"
         android:textSize="24sp" />
 
 </LinearLayout>

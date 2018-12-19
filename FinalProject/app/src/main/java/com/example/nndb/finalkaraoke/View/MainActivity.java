@@ -309,17 +309,17 @@ public class MainActivity extends AppCompatActivity  {
 
         TabHost.TabSpec tabBaiHat=tabHost.newTabSpec("t1");
         tabBaiHat.setContent(R.id.tabBaiHat);
-        tabBaiHat.setIndicator("Bài hát");
+        tabBaiHat.setIndicator("",getResources().getDrawable(R.drawable.ok));
         tabHost.addTab(tabBaiHat);
 
         TabHost.TabSpec tabYeuThich=tabHost.newTabSpec("t2");
         tabYeuThich.setContent(R.id.tabYeuThich);
-        tabYeuThich.setIndicator("Yêu thích");
+        tabYeuThich.setIndicator("",getResources().getDrawable(R.drawable.tym));
         tabHost.addTab(tabYeuThich);
 
         TabHost.TabSpec tabSearch=tabHost.newTabSpec("t3");
         tabSearch.setContent(R.id.tabSearch);
-        tabSearch.setIndicator("Tìm kiếm online");
+        tabSearch.setIndicator("",getResources().getDrawable(R.drawable.timkiem));
         tabHost.addTab(tabSearch);
 
         //endregion;

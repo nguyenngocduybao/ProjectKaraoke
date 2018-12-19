@@ -30,6 +30,8 @@
                     android:id="@+id/tabBaiHat"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -40,10 +42,10 @@
 
                         <EditText
                             android:id="@+id/txtTimBaiHat"
-                            android:focusable="false"
-                            android:layout_width="wrap_content"
+                            android:layout_width="290dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
+                            android:focusable="false"
                             android:hint="Tìm bài hát"
                             android:inputType="textPersonName"
                             android:textAlignment="center" />
@@ -74,6 +76,8 @@
                     android:id="@+id/tabYeuThich"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -85,7 +89,7 @@
                         <EditText
                             android:id="@+id/txtTimYeuThich"
                             android:focusable="false"
-                            android:layout_width="wrap_content"
+                            android:layout_width="290dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:hint="Tìm bài hát"
@@ -113,6 +117,8 @@
             android:id="@+id/tabSearch"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
             android:orientation="vertical">
 
                 <LinearLayout
@@ -124,7 +130,7 @@
                     <EditText
                         android:id="@+id/txtSearch"
                         android:focusable="false"
-                        android:layout_width="wrap_content"
+                        android:layout_width="290dp"
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="Tìm bài hát"
