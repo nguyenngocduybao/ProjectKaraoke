@@ -23,19 +23,19 @@
 ### Tìm kiếm bài hát có sẵn trong database   
    
    <p align="center">
-   <img src="FinalKaraoke/screenshots/databse.png" height = "480" width="270">
+   <img src="FinalKaraoke/screenshots/database.PNG" height = "480" width="270">
    </p>
     
 ### Tìm kiếm bài hát trên Youtube
    
    <p align="center">
-   <img src="FinalKaraoke/screenshots/youtube.png" height = "480" width="270"> <img src="FinalKaraoke/screenshots/youtubeplay.png" height = "480" width="270"> <img src="FinalKaraoke/youtubeplayfullscreen/show1.png" height = "480" width="270">
+   <img src="FinalKaraoke/screenshots/youtube.PNG" height = "480" width="270"> <img src="FinalKaraoke/screenshots/youtubeplay.PNG" height = "480" width="270"> <img src="FinalKaraoke/screenshots/youtubeplayfullscreen.PNG" height = "480" width="270">
    </p>
     
 ### Thêm bài hát vào mục yêu thích
         
    <p align="center">
-   <img src="FinalKaraoke/screenshots/singer.png" height = "480" width="270">
+   <img src="FinalKaraoke/screenshots/favorite.PNG" height = "480" width="270">
    </p>
 
 ## Yêu cầu thiết bị
