@@ -45,10 +45,6 @@
 
    +Target sdk : 28
 
--iOS:
-
-   +iOS: 8.0
-
 ## Thư viện và công nghệ
 
 - Language : Java
