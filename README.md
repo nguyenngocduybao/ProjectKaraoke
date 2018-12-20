@@ -39,7 +39,7 @@
 
    +Android studio : 3.0.1
 
-   +Gradle : 4.1
+   +Gradle : 4.10.1
 
    +Min sdk : 19
 
