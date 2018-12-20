@@ -49,8 +49,6 @@
 
 - Language : Java
 
-- FrameWork : 
-
 - Database: sqlite
 
 
