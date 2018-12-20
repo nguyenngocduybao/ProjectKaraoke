@@ -6,11 +6,11 @@
     <string name="skip">Bỏ qua</string>
     <string name="start">Bắt đầu</string>
     <string name="title_slide1">Thư viện rộng lớn</string>
-    <string name="desc_slide1">Cập nhật đầy đủ các bài hát mới nhất một cách nhanh chóng</string>
-    <string name="title_slide2">Ghi âm</string>
-    <string name="desc_slide2">Bạn có thể nghe lại lời mình đã hát</string>
-    <string name="title_slide3">Lưu trữ ngoại tuyến</string>
-    <string name="desc_slide3">Bạn có thể tải bài hát mình thích về để hát offline</string>
+    <string name="desc_slide1">Cập nhật đầy đủ các bài hát mới nhất</string>
+    <string name="title_slide2">Tìm kiếm trực tuyến</string>
+    <string name="desc_slide2">Bạn có thể hát trực tuyến bất chỉ cần bạn có mạng</string>
+    <string name="title_slide3">Cập nhật bài hát liên tục</string>
+    <string name="desc_slide3">Cập nhật liên tục các Vol của Arirang</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
