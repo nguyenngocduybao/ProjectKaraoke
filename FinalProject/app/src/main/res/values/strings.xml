@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FinalKaraoke</string>
+    <string name="app_name">iKaraoke</string>
     <string name="search">Search</string>
     <string name="failed">Failed to initialize Youtube Player</string>
     <string name="next">Tiếp</string>
