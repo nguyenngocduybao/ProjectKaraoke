@@ -1,5 +1,5 @@
 ﻿# iKaraoke
-Ứng dụng ...
+Bạn thích hát karaoke? Ứng dụng iKaraoke sẽ giúp bạn điều ấy. Ứng dụng giúp bạn hát karaoke ngay trên điện thoại di động của mình. iKaraoke với kho bài hát rộng lớn và luôn luôn cập nhật.
 
 ## Nội dung
 1. [Chức năng](#chức-năng)
@@ -15,6 +15,8 @@
 1. [Thư viện và công nghệ](#thư-viện-và-công-nghệ)
 
 1. [Tác giả](#tác-giả)
+
+1. [Download](#dowload)
 
 ## Chức năng
 ### Tìm kiếm bài hát Karaoke Arirang      
@@ -58,3 +60,9 @@ Nguyễn Ngọc Duy Bảo - 16520085@gm.uit.edu.vn
 Phan Trọng Ba - 16520067@gm.uit.edu.vn
 
 Bạch Hải Đăng - 16520167@gm.uit.edu.vn
+
+* Giảng viên hướng dẫn: Huỳnh Tuấn Anh
+
+
+## Download
+[Link Google Drive](https://drive.google.com/file/d/1jFRADvA-oxZKbmUCGt-3wqH3W7792WfK/view?fbclid=IwAR08HCPBCPPW0ZG4CJVO2EaRtu7s4ivoaPGJg7Wos9PuKdlwmT5y5P7vNOM)
