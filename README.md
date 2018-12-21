@@ -16,7 +16,7 @@ Bạn thích hát karaoke? Ứng dụng iKaraoke sẽ giúp bạn điều ấy. 
 
 1. [Tác giả](#tác-giả)
 
-1. [Download](#dowload)
+1. [Download](#download)
 
 ## Chức năng
 ### Tìm kiếm bài hát Karaoke Arirang      
